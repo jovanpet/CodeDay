@@ -1,10 +1,10 @@
-omelette,breakfast,quick,happy,hot
-french toast,breakfast,sweet,hot,fat
-grilled cheese,brown,italian,sad
-Pb&J,quick,warm,farm.organic
-boiled eggs,vegan,slurp
-chicken curry,hot,indian,romantic
-fried rice,asian,sick,netural
-sandwich,quick,unhealthy,breakfast,lunch,snack
-beef curry,vegan,slow,sturdy,tint
-fries,unhealthy,breakfast,morning
+omelette,Breakfast,Family,Happy,Hungry,Romance
+french toast,breakfast,Family,Happy
+grilled cheese,Happy,Hungry,Romance,Party,Family,Breakfast,Home-Alone
+Pb&J,Hungry,Angry,Stressful,Binge
+boiled eggs,Hungry,Stressful,Hungover,Binge,Breakfast,Home-Alone
+chicken curry,Happy,Romance,Family,Date
+fried rice,Hungry,Stressful,Sad,Angry,Hungover,Football,Binge,Home-Alone
+sandwich,Breakfast,Hungry,Football,Party,Hungover,Family
+beef curry,Happy,Romance,Family,Date
+fries,Hungry,Happy,Sad,Hungover,Party,Family,Binge,Football

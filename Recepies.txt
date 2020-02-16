@@ -1,0 +1,10 @@
+omelette,egg:1 oil:1 butter:1
+french toast,egg:1 milk:1 bread:1
+grilled cheese,egg:1 bread:1 cheese:1 butter:1 oil:1
+Pb&J,bread:1 peanut:1 jelly:1
+boiled eggs,egg:1
+chicken curry,curry:1 chicken:1 potato:1
+fried rice,rice:1
+sandwich,bread:1 tomato:1 leaf:1 ham:1
+beef curry,curry:1 beef:1 potato:1
+fries,potato:1 oil:1
