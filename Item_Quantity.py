@@ -22,6 +22,7 @@ def be_done():
 
     dict_fridge=fridge(my_split(contents_ingridiatns), pair_item_quan)
 
+
     var_fridge=StringVar()
 
     var_start_fridge.set("")
@@ -32,6 +33,7 @@ def be_done():
     for i,j in dict_fridge.items():
         help+= i+ " : "+ str(j)  + "\n"
     var_fridge.set(help)
+
 
 
 
@@ -65,6 +67,12 @@ def check_theme_list():
             final_theme_list.append(i[1]) #final global list
 
 def check_lists():
+    ingridiatns=open("Ingredients.txt", "r")
+    if ingridiatns.mode=="r":
+        contents_ingridiatns = ingridiatns.read()
+
+    dict_fridge=fridge(my_split(contents_ingridiatns), pair_item_quan)
+
     type=open('Recepies_type.txt', 'r') #Jovan test file
     if type.mode=='r':
         content_type=type.read()
@@ -73,7 +81,6 @@ def check_lists():
     check_emo_list()
     check_theme_list()
     theam= final_theme_list + final_Emotion_list #lista checked stuff in code
-
     final_Emotion_list.clear()
     final_theme_list.clear()
     #print(devide_into_can_cant(search_similar_fridge(dict_fridge,dict_recepies), search_similar_type(theam, dict_type)))
