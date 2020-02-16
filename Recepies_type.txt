@@ -1,0 +1,10 @@
+omelette,breakfast,quick,happy,hot
+french toast,breakfast,sweet,hot,fat
+grilled cheese,brown,italian,sad
+Pb&J,quick,warm,farm.organic
+boiled eggs,vegan,slurp
+chicken curry,hot,indian,romantic
+fried rice,asian,sick,netural
+sandwich,quick,unhealthy,breakfast,lunch,snack
+beef curry,vegan,slow,sturdy,tint
+fries,unhealthy,breakfast,morning
