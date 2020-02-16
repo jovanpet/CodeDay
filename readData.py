@@ -2,7 +2,7 @@
 def data(contents):
     food=''
     ing=''
-    diction={}
+    diction={} #{}
     list=[]
     length = len(contents)
     j=0
@@ -18,8 +18,7 @@ def data(contents):
             j=i+1
             list.append(ing)
     list.append(split_helper(contents[j:]))
-    diction.update({food: list})
-    return diction
+    return food, list
 
 #the function seperates the words between ':'
 def split_helper(text):
@@ -31,14 +30,15 @@ def split_helper(text):
 
 # don't know i did this but this acts like MAIN it reads data by lines
 def first():
-    list_of_foods=[]
-    with open("data.rtf") as file_in:
+    list_of_foods={}
+    with open("Recepies.txt") as file_in:
         lines = []
         for line in file_in:
             lines.append(line)
     for i in lines:
-        list_of_foods.append(data(i))
+        x,y=data(i)
+        list_of_foods.update({x:y})
     return list_of_foods
 
-print(first())
+
 
