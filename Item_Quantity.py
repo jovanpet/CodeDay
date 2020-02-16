@@ -4,6 +4,16 @@ from Collage_lunch import *
 
 dict_fridge={} #globalna za frizider
 
+dict_recepies=first()
+
+theam=[]
+
+dict_type={}
+
+final_theme_list = []
+
+final_Emotion_list = []
+
 def be_done():
     pair_item_quan.append(('done',0))
     ingridiatns=open("Ingredients.txt", "r")
@@ -20,7 +30,7 @@ def be_done():
 
     help=""
     for i,j in dict_fridge.items():
-        help= i+ " : "+ str(j)  + "\n"
+        help+= i+ " : "+ str(j)  + "\n"
     var_fridge.set(help)
 
 
@@ -41,8 +51,7 @@ def check_emo_list():
                 ]
     for i in Emotions_list:
         if i[0] == 1:
-            final_Emotion_list.append(i[1])
-    print(final_Emotion_list)
+            final_Emotion_list.append(i[1]) #final emotion list
     
 
 def check_theme_list():
@@ -53,20 +62,23 @@ def check_theme_list():
              ]
     for i in Theme_list:
         if i[0] == 1:
-            final_theme_list.append(i[1])
-    print(final_theme_list)
+            final_theme_list.append(i[1]) #final global list
 
 def check_lists():
+    type=open('Recepies_type.txt', 'r') #Jovan test file
+    if type.mode=='r':
+        content_type=type.read()
+    dict_type=make_dict(content_type)
+
     check_emo_list()
-    final_Emotion_list = []
-    print(final_Emotion_list)
     check_theme_list()
-    final_them_list = []
-    print(final_them_list)
+    theam= final_theme_list + final_Emotion_list #lista checked stuff in code
+
+    final_Emotion_list.clear()
+    final_theme_list.clear()
+    #print(devide_into_can_cant(search_similar_fridge(dict_fridge,dict_recepies), search_similar_type(theam, dict_type)))
 
     #send to API
-
-
 
 app = Tk()
 canvas = app.geometry("1980x1080") 
@@ -148,7 +160,6 @@ c4.grid(row = 1, column = 9)
 c5 = Checkbutton(app, text="Stressful", variable = var5)
 c5.grid(row = 1, column = 10)
 
-final_Emotion_list = []
 
 c6 = Checkbutton(app, text="Party", variable = var6)
 c6.grid(row = 3, column = 5)
@@ -176,7 +187,5 @@ c13.grid(row = 3, column = 12)
 
 a1=Button(app, text = "Apply", command=check_lists)
 a1.grid(row = 6, column = 15)
-
-final_theme_list = []
 
 app.mainloop()
