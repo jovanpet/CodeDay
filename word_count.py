@@ -11,11 +11,11 @@ def text_to_lines(text):
             text=""
     return words
     
-def my_split(text):
+def my_split2(text):
     words=[]
     while text!="":
         try:
-            a=text.index(" ")
+            a=text.index(",")
             words.append(text[:a])
             text = text[a + 1:]
         except ValueError:
