@@ -7,11 +7,12 @@ def similar(a, b):
 #inputs the ingredients and quantities from the users fridge
 #the input is the return of the my_split
 #this function returns a dictionary with the ingredients in the users fridge
-def fridge(item_list):
+def fridge(item_list, user_list):
     dict_of_items={}
-    item=input('>')
-    quant=int(input('>'))
+    item, quant=user_list[0]
+    k=1
     while item!='done':#delete done when done. Change to False.
+
         for i in item_list:
             if i==item:# tell person that we dont have the ingredient
                 dict_of_items.update({item: quant})
@@ -20,9 +21,9 @@ def fridge(item_list):
                     if similar(i,item)>=0.75:
                         item=i
                         dict_of_items.update({item: quant})
-        item = input('>')
-        if item != 'done':
-            quant = int(input('>'))
+        item, quant=user_list[k]
+
+        k+=1
     return dict_of_items
 
 
@@ -49,9 +50,5 @@ def split_helper(text):
     return text
 
 #Reads Unititled which is the data where all the ingredients are stored
-f=open("Untitled.rtf", "r")
-if f.mode=="r":
-    contents = f.read()
-#this is a testing print can delete print and use the rest
-print(fridge(my_split(contents)))
+
 
