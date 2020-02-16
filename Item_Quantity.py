@@ -1,5 +1,28 @@
 from tkinter import *
 from PIL import Image, ImageTk
+from Collage_lunch import *
+
+dict_fridge={} #globalna za frizider
+
+def be_done():
+    pair_item_quan.append(('done',0))
+    ingridiatns=open("Ingredients.txt", "r")
+    if ingridiatns.mode=="r":
+        contents_ingridiatns = ingridiatns.read()
+
+    dict_fridge=fridge(my_split(contents_ingridiatns), pair_item_quan)
+
+    var_fridge=StringVar()
+
+    var_start_fridge.set("")
+
+    fridge_box= Message( app, textvariable=var_fridge, relief=SUNKEN , width=300 ).grid(row=11, column= 1)
+
+    help=""
+    for i,j in dict_fridge.items():
+        help= i+ " : "+ str(j)  + "\n"
+    var_fridge.set(help)
+
 
 
 def applyFunction():
@@ -72,8 +95,16 @@ Item_Enter.grid(row = 1, column = 1)
 Entry_quantity = IntVar()
 Quantity_Enter = Entry(app, textvariable=Entry_quantity)
 Quantity_Enter.grid(row = 1, column = 3)
-apply = Button(app, text="Apply", command=applyFunction).grid(row = 3)
+apply = Button(app, text="Apply", command=applyFunction).grid(column=1)
+done= Button( app, text='Done', command=be_done).grid(column= 1)
 
+#FRIDGE
+#This will show what is inside the firdge
+var_start_fridge=StringVar()
+
+fridge_start= Message( app, textvariable=var_start_fridge, relief=SUNKEN, width=124  ).grid(row=11, column= 1)
+
+var_start_fridge.set("Here will be your items when you type them in:")
 
 Unit_choice = StringVar(app)
 Unit_choice.set(unit_list[0])
