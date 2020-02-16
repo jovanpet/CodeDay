@@ -21,18 +21,19 @@ def be_done():
         contents_ingridiatns = ingridiatns.read()
 
     dict_fridge=fridge(my_split(contents_ingridiatns), pair_item_quan)
-
-
+    #Fridge
+    #---------------------------------------------------
     var_fridge=StringVar()
 
     var_start_fridge.set("")
-
+    
     fridge_box= Message( app, textvariable=var_fridge, relief=SUNKEN , width=300 ).grid(row=11, column= 1)
 
     help=""
     for i,j in dict_fridge.items():
         help+= i+ " : "+ str(j)  + "\n"
     var_fridge.set(help)
+    #-----------------------------------------------------
 
 
 
@@ -83,7 +84,7 @@ def check_lists():
     theam= final_theme_list + final_Emotion_list #lista checked stuff in code
     final_Emotion_list.clear()
     final_theme_list.clear()
-    #print(devide_into_can_cant(search_similar_fridge(dict_fridge,dict_recepies), search_similar_type(theam, dict_type)))
+    print(devide_into_can_cant(search_similar_fridge(dict_fridge,dict_recepies), search_similar_type(theam, dict_type)))
 
     #send to API
 
@@ -119,12 +120,13 @@ done= Button( app, text='Done', command=be_done).grid(column= 1)
 
 #FRIDGE
 #This will show what is inside the firdge
+#------------------------------
 var_start_fridge=StringVar()
 
 fridge_start= Message( app, textvariable=var_start_fridge, relief=SUNKEN, width=124  ).grid(row=11, column= 1)
 
 var_start_fridge.set("Here will be your items when you type them in:")
-
+#----------------------------
 Unit_choice = StringVar(app)
 Unit_choice.set(unit_list[0])
 Units = OptionMenu(app, Unit_choice, *unit_list).grid(row = 1, column = 4)
